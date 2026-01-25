@@ -184,7 +184,8 @@ def main():
         object_1_name=object_1_name,
         object_0_xy=OBJECT_0_XY.copy(),
         object_1_xy=OBJECT_1_XY.copy(),
-        robot_uid="franka_allegro_right",
+        # robot_uid="franka_allegro_right",
+        robot_uid="xarm7_allegro_right",
         initial_joint_positions=INITIAL_JOINT_POSITIONS.copy(),
         z_top=args.z_top,
     )

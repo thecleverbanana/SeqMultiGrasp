@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: seqmultigrasp:cuda12.8
+    # For GPU support when using Docker CLI: `--gpus all` is recommended.
+    # Some docker-compose setups support `runtime: nvidia` or device requests.
+    runtime: nvidia
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+    volumes:
+      - .:/workspace:rw
+    working_dir: /workspace
+    command: ["bash"]
+    stdin_open: true
+    tty: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]

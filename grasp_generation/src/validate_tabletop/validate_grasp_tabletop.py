@@ -38,7 +38,7 @@ _HAND_INITIAL_JOINT_POSITIONS = [0., 0.7, 0., 0.4, 0., 0.7, 0., 0.4, 0., 0.7, 0.
 def validate_one_object_tabletop(
     data_path: str,
     rotate_hand: bool = False,
-    debug: bool = False,
+    debug: bool = False, # for debugging
 ) -> List[int]:
 
     object_name, hand_pose_relative_to_object, hand_qpos = _load_data(
@@ -58,7 +58,8 @@ def validate_one_object_tabletop(
         tensor_args.dtype).to(tensor_args.device)
     hand_qpos = hand_qpos.to(tensor_args.dtype).to(tensor_args.device)
 
-    initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, 0.0])
+    initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, 0.0]) # for franka original
+    # initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, -0.0]) # for xarm tuning
     z_top = 0.083
     static_box_pos = np.array([0.0, 0.0, z_top/2])
     static_box_dims = np.array([0.5, 0.8, z_top])
@@ -124,7 +125,8 @@ def validate_one_object_tabletop(
 
 
 def initialize_ik_solver(world_cfg: WorldConfig, tensor_args: TensorDeviceType) -> IKSolver:
-    robot_file = "franka_allegro_right.yml"
+    # robot_file = "franka_allegro_right.yml"
+    robot_file = "xarm7_allegro_right.yml"
     robot_cfg_path = join_path(get_robot_configs_path(), robot_file)
     robot_cfg_data = load_yaml(robot_cfg_path)
     robot_cfg = RobotConfig.from_dict(robot_cfg_data["robot_cfg"])

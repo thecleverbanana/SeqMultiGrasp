@@ -4,6 +4,7 @@
 
 ```bash
 conda create -n seq_multi_grasp python=3.9
+# conda create -n seq_multi_grasp python=3.8
 conda activate seq_multi_grasp
 ```
 

@@ -23,9 +23,18 @@ class VideoRecorder:
         iio.imwrite(path, self._frames, fps=fps, codec='libx264')
 
 
+# def reorder_joint_indices(joint_names: List[str]) -> List[int]:
+#     indexed_joints = [(name, i) for i, name in enumerate(joint_names)]
+#     sorted_joints = sorted(indexed_joints, key=lambda x: int(
+#         x[0].split('_')[1].split('.')[0]))
+#     reordered_indices = [index for _, index in sorted_joints]
+#     return reordered_indices
+
 def reorder_joint_indices(joint_names: List[str]) -> List[int]:
     indexed_joints = [(name, i) for i, name in enumerate(joint_names)]
-    sorted_joints = sorted(indexed_joints, key=lambda x: int(
-        x[0].split('_')[1].split('.')[0]))
+    sorted_joints = sorted(
+        indexed_joints,
+        key=lambda x: int("".join(ch for ch in (x[0].split("_", 1)[1] if "_" in x[0] else x[0]).split(".", 1)[0] if ch.isdigit())),
+    )
     reordered_indices = [index for _, index in sorted_joints]
     return reordered_indices

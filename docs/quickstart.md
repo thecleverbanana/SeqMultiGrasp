@@ -1,5 +1,4 @@
 # Quickstart
-
 ## grasp_generation
 
 ### Single-Object Grasp Pose Synthesis
@@ -15,6 +14,14 @@ python main.py \
     n_iter=6000 \
     batch_size=256
 ```
+
+python main.py \
+    object_code=cube \
+    name=my_run_cube_xarm \
+    'active_links=["link_13.0","link_14.0","link_15.0","link_15.0_tip","link_1.0","link_2.0","link_3.0","link_3.0_tip"]' \
+    n_contact=2 \
+    n_iter=6000 \
+    batch_size=256
 
 The results will be saved under `data/experiments/my_run_cube`. TensorBoard logs are located in the `logs` subdirectory:
 
@@ -56,6 +63,9 @@ python merge.py --path_0 ../data/experiments/my_run_cube/results/cube_success_va
 --save_path cube_cylinder_r_2_85_h_10_5.h5
 ```
 
+python merge.py --path_0 ../data/experiments/my_run_bunny_v2/results/bunny_v2_success_validated.npy \--path_1 ../data/experiments/my_run_cylinder_r_2_85_h_10_5/results/cylinder_r_2_85_h_10_5_tabletop_validated.npy \
+--save_path bunny_cylinder_r_2_85_h_10_5.h5
+
 
 ### Visualization
 
@@ -81,4 +91,12 @@ python eval.py \
   --n 1 \
   --vis \
   --output_dir "../data/experiments/eval_cube_cylinder_r_2_85_h_10_5"
+```
+
+```bash
+python eval.py \
+  --data_path bunny_cylinder_r_2_85_h_10_5.h5 \
+  --n 1 \
+  --vis \
+  --output_dir "../data/experiments/eval_bunny_cylinder_r_2_85_h_10_5"
 ```

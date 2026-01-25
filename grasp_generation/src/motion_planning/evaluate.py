@@ -12,7 +12,8 @@ from src.motion_planning.planner import Planner
 from src.utils.width_mapper import make_width_mapper, WidthMapper
 from src.consts import HAND_WIDTH_MAPPER_META_PATH, HAND_URDF_PATH
 
-from src.envs.evaluator import TwoObjectsV0
+# from src.envs.evaluator import TwoObjectsV0
+from src.envs.evaluator_xarm import TwoObjectsV0
 from src.envs.wrappers.record_action import RecordAction
 
 from loguru import logger

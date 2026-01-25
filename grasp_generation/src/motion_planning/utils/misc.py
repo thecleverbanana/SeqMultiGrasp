@@ -5,13 +5,28 @@ from curobo.types.base import TensorDeviceType
 import sapien
 
 
+# def allegro_hand_reorder_joint_indices(joint_names: List[str]) -> List[int]:
+#     # 提取 joint 名称中的索引部分并记录其原始索引
+#     indexed_joints = [(name, i) for i, name in enumerate(joint_names)]
+#
+#     # 根据 joint 名称中的数字进行排序
+#     sorted_joints = sorted(indexed_joints, key=lambda x: int(
+#         x[0].split('_')[1].split('.')[0]))
+#
+#     # 返回重新排序后的索引列表
+#     reordered_indices = [index for _, index in sorted_joints]
+#
+#     return reordered_indices
+
 def allegro_hand_reorder_joint_indices(joint_names: List[str]) -> List[int]:
     # 提取 joint 名称中的索引部分并记录其原始索引
     indexed_joints = [(name, i) for i, name in enumerate(joint_names)]
 
     # 根据 joint 名称中的数字进行排序
-    sorted_joints = sorted(indexed_joints, key=lambda x: int(
-        x[0].split('_')[1].split('.')[0]))
+    sorted_joints = sorted(
+        indexed_joints,
+        key=lambda x: int("".join(ch for ch in (x[0].split("_", 1)[1] if "_" in x[0] else x[0]).split(".", 1)[0] if ch.isdigit())),
+    )
 
     # 返回重新排序后的索引列表
     reordered_indices = [index for _, index in sorted_joints]

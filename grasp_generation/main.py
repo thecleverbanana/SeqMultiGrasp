@@ -276,7 +276,9 @@ def main(cfg: OmegaConf):
 
     # execution-based validation
     tabletop_success_indices = validate_one_object_tabletop(
-        validated_data_path)
+        validated_data_path,
+        debug=True,
+    )
     tabletop_validated_data_path = os.path.join(
         result_path, f"{cfg.object_code}_tabletop_validated.npy")
     np.save(

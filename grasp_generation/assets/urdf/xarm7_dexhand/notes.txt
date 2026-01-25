@@ -1,0 +1,1 @@
+The visual part of these urdf may be tricky. I think this is beucase that these URDF files are from Maniskill and the visual part is tuned for Maniskill.

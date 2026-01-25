@@ -20,7 +20,8 @@ from curobo.geom.types import WorldConfig
 from src.utils.width_mapper import WidthMapper
 from src.utils import torch_3d_utils
 from src.utils.misc import maniskill_transform_translation_rpy_batched
-from src.envs.evaluator import OneObjectV0
+# from src.envs.evaluator import OneObjectV0
+from src.envs.evaluator_xarm import OneObjectV0
 
 
 from typing import Any, Dict, List, Optional, Union, Callable, Tuple
@@ -199,6 +200,8 @@ def _validate_tabletop(
     qpos_hand_pre_grasp_pose, hand_pre_grasp_pose_success = compute_qpos_and_success(
         ik_solver, hand_pre_grasp_pose)
 
+    print("pre_grasp IK success:", hand_pre_grasp_pose_success.sum().item(), "/", batch_size)
+
     success_indices = success_indices & hand_pre_grasp_pose_success
 
     world_cfg_no_object = make_world_config_empty(
@@ -211,6 +214,8 @@ def _validate_tabletop(
 
     qpos_hand_grasp_pose, hand_grasp_pose_success = compute_qpos_and_success(
         ik_solver, hand_grasp_pose)
+
+    print("grasp IK success:", hand_grasp_pose_success.sum().item(), "/", batch_size)
 
     success_indices = success_indices & hand_grasp_pose_success
 
@@ -282,7 +287,8 @@ def _validate_tabletop(
         sim_backend=sim_backend,
         object_name=object_name,
         object_xy=object_xy,
-        robot_uid="franka_allegro_right",
+        # robot_uid="franka_allegro_right",
+        robot_uid="xarm7_allegro_right",
         initial_joint_positions=initial_joint_positions.clone(),
         initial_agent_poses=initial_agent_poses,
         static_box_pos=static_box_pos,
@@ -305,6 +311,14 @@ def _validate_tabletop(
 
     env.reset(seed=env_seed)
 
+    root_pose = env.unwrapped.agent.robot.get_root_pose()
+    hand_base = env.unwrapped.agent.robot.find_link_by_name("base_link")
+    object_pose = env.unwrapped.object.pose
+
+    print("root pose p:", root_pose.p, "q:", root_pose.q)
+    print("hand base pose p:", hand_base.pose.p, "q:", hand_base.pose.q)
+    print("object pose p:", object_pose.p, "q:", object_pose.q)
+
     run_interpolated_trajectory(
         env=env,
         success_indices=success_indices,
@@ -326,7 +340,16 @@ def _validate_tabletop(
     object_lifted_height = info["object_lifted_height"]
     n_contact = info["n_contact"]
 
+    print(
+        "object_lifted_height min/max:",
+        object_lifted_height.min().item(),
+        object_lifted_height.max().item(),
+    )
+    print("n_contact min/max:", n_contact.min().item(), n_contact.max().item())
+    print("n_contact > 0:", (n_contact > 0).sum().item(), "/", batch_size)
+
     lifted = object_lifted_height > 0.1
+    print("lifted:", lifted.sum().item(), "/", batch_size)
     lifted = lifted.to(success_indices.device)
 
     success_indices: torch.Tensor = success_indices & lifted  # (B,)
