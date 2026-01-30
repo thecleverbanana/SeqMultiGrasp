@@ -58,8 +58,10 @@ def validate_one_object_tabletop(
         tensor_args.dtype).to(tensor_args.device)
     hand_qpos = hand_qpos.to(tensor_args.dtype).to(tensor_args.device)
 
-    initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, 0.0]) # for franka original
-    # initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, -0.0]) # for xarm tuning
+    # initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, 0.0]) # for franka original
+    initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, 0.0]).to(
+        tensor_args.device
+    )  # for xarm tuning
     z_top = 0.083
     static_box_pos = np.array([0.0, 0.0, z_top/2])
     static_box_dims = np.array([0.5, 0.8, z_top])

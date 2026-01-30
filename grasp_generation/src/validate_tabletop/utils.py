@@ -192,6 +192,13 @@ def _validate_tabletop(
 
     hand_grasp_pose = object_pose_in_root_frame*hand_pose_relative_to_object
 
+    # root_pose = initial_agent_poses  # or env root pose if available
+    # hand_grasp_pose = root_pose * hand_pose_relative_to_object
+
+    hand_grasp_pose.p[:, 0] -= 0.15 # for xarm tuning
+    # hand_grasp_pose.p[:, 1] += 0.02 # for xarm tuning
+    # hand_grasp_pose.p[:, 2] -= 0.06 # for xarm tuning
+
     norm_object = normalize(hand_pose_relative_to_object.get_p())
 
     hand_pre_grasp_pose = copy.deepcopy(hand_grasp_pose)
@@ -315,9 +322,16 @@ def _validate_tabletop(
     hand_base = env.unwrapped.agent.robot.find_link_by_name("base_link")
     object_pose = env.unwrapped.object.pose
 
+    target = hand_grasp_pose  # target pose from dataset
+    actual = hand_base.pose
+    delta_p = actual.p - target.p
+    print("hand pose error (m):", delta_p)
+
     print("root pose p:", root_pose.p, "q:", root_pose.q)
     print("hand base pose p:", hand_base.pose.p, "q:", hand_base.pose.q)
     print("object pose p:", object_pose.p, "q:", object_pose.q)
+    print("hand joint names:", env.unwrapped.agent.hand_joint_names)
+    print("hand qpos input (first):", hand_qpos[0].detach().cpu().numpy())
 
     run_interpolated_trajectory(
         env=env,
@@ -339,6 +353,8 @@ def _validate_tabletop(
     info = unwrapped_env.evaluate()
     object_lifted_height = info["object_lifted_height"]
     n_contact = info["n_contact"]
+    print("finger contact links:", env.unwrapped.agent._finger_contact_link_names)
+    print("palm link name:", env.unwrapped.agent._palm_link_name)
 
     print(
         "object_lifted_height min/max:",
@@ -376,7 +392,6 @@ def dict_to_hand_qpos(d: Dict[str, torch.Tensor]) -> torch.Tensor:
 
 def normalize(v: torch.Tensor):
     return v / torch.norm(v, dim=-1, keepdim=True)
-
 
 def compute_qpos_and_success(
     ik_solver: IKSolver,
