@@ -25,6 +25,9 @@ python main.py \
 
 The results will be saved under `data/experiments/my_run_cube`. TensorBoard logs are located in the `logs` subdirectory:
 
+
+CUROBO_IK_NO_WORLD=1 python run_tabletop_validation.py   --validated_path /home/jerry/Dropbox/research/USC/SLURM/SeqMultiGrasp/data/experiments/my_run_cylinder_r_2_85_h_10_5_xarm/results/cylinder_r_2_85_h_10_5_success_validated.npy   --debug
+
 ```bash
 tensorboard --logdir data/experiments/my_run_cube/logs
 ```

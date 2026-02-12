@@ -66,8 +66,14 @@ if __name__ == '__main__':
     object_1_contact_candidates_plotly = [go.Scatter3d(
         x=object_1_contact_candidates[:, 0], y=object_1_contact_candidates[:, 1], z=object_1_contact_candidates[:, 2], mode='markers', marker=dict(size=10, color='blue'))]
 
+    object_2_contact_candidates = hand_model.get_contact_candidates_on_links_world(
+        ["link_1.0", "link_2.0", "link_3.0", "link_3.0_tip"])[0].detach().cpu()
+
+    object_2_contact_candidates_plotly = [go.Scatter3d(
+        x=object_2_contact_candidates[:, 0], y=object_2_contact_candidates[:, 1], z=object_2_contact_candidates[:, 2], mode='markers', marker=dict(size=10, color='green'))]
+
     fig = go.Figure(hand_plotly + object_0_contact_candidates_plotly +
-                    object_1_contact_candidates_plotly)
+                    object_1_contact_candidates_plotly + object_2_contact_candidates_plotly)
     fig.update_layout(
         scene=dict(
             xaxis=dict(visible=False),

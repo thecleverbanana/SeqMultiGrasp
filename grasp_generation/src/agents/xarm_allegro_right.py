@@ -55,7 +55,15 @@ class XArm7AllegoRight(BaseAgent):
     )
 
     # xArm7 joints (from your URDF: joint1..joint7)
-    arm_joint_names = ["joint1", "joint2", "joint3", "joint4", "joint5", "joint6", "joint7"]
+    arm_joint_names = [
+        "xarm7_joint1",
+        "xarm7_joint2",
+        "xarm7_joint3",
+        "xarm7_joint4",
+        "xarm7_joint5",
+        "xarm7_joint6",
+        "xarm7_joint7",
+    ]
 
     # These were Franka-specific; kept here only if you later turn on normalization.
     # Currently your controller passes (None, None) so these are unused.

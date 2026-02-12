@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="xarm7" path="assets/xarm7_leaphand/xarm7_allegro_right.urdf">
+	<link name="link_base">
+		<inertial>
+			<origin rpy="0 0 0" xyz="-0.021131 -0.0016302 0.056488"></origin>
+			<mass value="0.88556"></mass>
+			<inertia ixx="0.0030595" ixy="0.00012259" ixz="-0.00062705" iyy="0.0037783" iyz="0.00027023" izz="0.0020125"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="meshes/visual/link_base.glb"></mesh>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.090543"></sphere>
+			</geometry>
+			<origin xyz="-0.009822685557497348 -0.0004200115631789337 0.045932544027745804" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.08327"></sphere>
+			</geometry>
+			<origin xyz="0.001143314442502652 0.0010229884368210664 0.09642654402774581" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="link1">
+		<inertial>
+			<origin rpy="0 0 0" xyz="-0.0002 0.02905 -0.01233"></origin>
+			<mass value="2.382"></mass>
+			<inertia ixx="0.0056905" ixy="-1.579e-05" ixz="5.125e-06" iyy="0.0049566" iyz="-0.000873378" izz="0.003316654"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="meshes/visual/link1.glb"></mesh>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.082036"></sphere>
+			</geometry>
+			<origin xyz="0.00011850103334569171 0.016853344212451223 -0.00018040880377904328" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.076086"></sphere>
+			</geometry>
+			<origin xyz="-0.0002344989666543083 -0.0047386557875487775 -0.06557640880377905" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="link2">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0.00022 -0.12856 0.01735"></origin>
+			<mass value="1.869"></mass>
+			<inertia ixx="0.0095989" ixy="1.541e-06" ixz="5.56e-06" iyy="0.00382472" iyz="-0.00317156" izz="0.007565669"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="meshes/visual/link2.glb"></mesh>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.081135"></sphere>
+			</geometry>
+			<origin xyz="-0.0003014605783935966 -0.1333216654906158 0.0016707879268057085" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.081483"></sphere>
+			</geometry>
+			<origin xyz="-0.0017104605783935967 -0.09539866549061579 0.07280178792680571" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.059776"></sphere>
+			</geometry>
+			<origin xyz="-0.015401460578393597 0.005834334509384212 0.09610278792680571" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.057029"></sphere>
+			</geometry>
+			<origin xyz="0.022086539421606405 0.0002483345093842182 0.09450478792680571" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="link3">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0.0466 -0.02463 -0.00768"></origin>
+			<mass value="1.6383"></mass>
+			<inertia ixx="0.00310955" ixy="0.00030837" ixz="-0.00058453" iyy="0.00264483" iyz="0.000338893" izz="0.0026624"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="meshes/visual/link3.glb"></mesh>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.085349"></sphere>
+			</geometry>
+			<origin xyz="0.013209131899725777 0.01003219089153077 -0.04565185660528091" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.083065"></sphere>
+			</geometry>
+			<origin xyz="0.05079413189972577 -0.003523809108469231 -0.0004138566052809163" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="link4">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0.07047 -0.11575 0.012"></origin>
+			<mass value="1.7269"></mass>
+			<inertia ixx="0.005889" ixy="0.00137112" ixz="0.00088143" iyy="0.00359703" iyz="-0.001762155" izz="0.00543244"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="meshes/visual/link4.glb"></mesh>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.066979"></sphere>
+			</geometry>
+			<origin xyz="0.07793559973734299 -0.13077204715368318 0.007634861635274347" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.070637"></sphere>
+			</geometry>
+			<origin xyz="0.077846599737343 -0.09137604715368317 0.014254861635274348" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.071681"></sphere>
+			</geometry>
+			<origin xyz="0.069955599737343 -0.08038304715368318 0.06174686163527435" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.059201"></sphere>
+			</geometry>
+			<origin xyz="0.026581599737342993 -0.023333047153683173 0.08347086163527434" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.05454"></sphere>
+			</geometry>
+			<origin xyz="-0.0011094002626570038 -0.0011250471536831744 0.08654786163527434" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="link5">
+		<inertial>
+			<origin rpy="0 0 0" xyz="-0.00032 0.01604 -0.026"></origin>
+			<mass value="1.3203"></mass>
+			<inertia ixx="0.00534665" ixy="1.5117e-05" ixz="-3.69e-07" iyy="0.0049779" iyz="-0.00022132" izz="0.0013624"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="meshes/visual/link5.glb"></mesh>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.044377"></sphere>
+			</geometry>
+			<origin xyz="0.00011264382708814141 0.06108914765800623 -0.08047913520490677" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.058074"></sphere>
+			</geometry>
+			<origin xyz="0.0020476438270881415 0.00350914765800623 -0.14488713520490676" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.056247"></sphere>
+			</geometry>
+			<origin xyz="-7.53561729118586e-05 0.053318147658006236 -0.03188613520490676" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.055407"></sphere>
+			</geometry>
+			<origin xyz="-0.0006303561729118585 0.04021514765800623 -0.0001451352049067628" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.049012"></sphere>
+			</geometry>
+			<origin xyz="-0.0027083561729118587 0.04267714765800623 -0.10967313520490676" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="link6">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0.06469 0.03278 0.02141"></origin>
+			<mass value="1.325"></mass>
+			<inertia ixx="0.0014745" ixy="-0.000488" ixz="0.0002953" iyy="0.0019037" iyz="0.00014749" izz="0.0023652"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="meshes/visual/link6.glb"></mesh>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.060912"></sphere>
+			</geometry>
+			<origin xyz="0.07598182 0.020571005 6.90150000000004e-05" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.063307"></sphere>
+			</geometry>
+			<origin xyz="0.02012482 0.0001880050000000015 0.021902015" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="link7">
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 -0.00677 -0.01098"></origin>
+			<mass value="0.17"></mass>
+			<inertia ixx="9.3e-05" ixy="-0.0" ixz="-0.0" iyy="5.87e-05" iyz="-3.6e-06" izz="0.000132"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="meshes/visual/link7.glb"></mesh>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.044033"></sphere>
+			</geometry>
+			<origin xyz="0.00015747225003949966 0.0013680348926104636 -0.013522055370485246" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.043479"></sphere>
+			</geometry>
+			<origin xyz="-0.0098065277499605 -0.014765965107389535 -0.013716055370485246" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="part_studio_link">
+		<visual>
+			<origin rpy="-1.571 0 0"></origin>
+			<geometry>
+				<mesh filename="hand_mount/meshes/visual/mount_v4.stl" scale="0.001 0.001 0.001"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.035462"></sphere>
+			</geometry>
+			<origin xyz="0.010976384187680996 0.010590831937407123 0.016810895497217607" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.039356"></sphere>
+			</geometry>
+			<origin xyz="0.006324384187680996 -0.030366168062592874 0.019106895497217606" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.025797"></sphere>
+			</geometry>
+			<origin xyz="0.009259384187680996 -0.044264168062592875 0.04120589549721761" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.031262"></sphere>
+			</geometry>
+			<origin xyz="-0.012459615812319002 -0.03898116806259288 0.028481895497217604" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.034805"></sphere>
+			</geometry>
+			<origin xyz="-0.007476615812319003 -0.011590168062592877 0.016437895497217605" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.030611"></sphere>
+			</geometry>
+			<origin xyz="-0.019718615812319002 0.024843831937407124 0.016602895497217607" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.024807"></sphere>
+			</geometry>
+			<origin xyz="-0.043953615812319 0.04624883193740712 0.017674895497217603" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="base_link">
+		<inertial>
+			<mass value="0.4154"></mass>
+			<origin rpy="0 0 0" xyz="0 0 0"></origin>
+			<inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/base_link.glb"></mesh>
+			</geometry>
+			<origin rpy="0 0 0" xyz="0 0 0 "></origin>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.036404"></sphere>
+			</geometry>
+			<origin xyz="-0.008999999999999998 -0.000634 -0.022934" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.036861"></sphere>
+			</geometry>
+			<origin xyz="-0.008999999999999998 0.0353 -0.023001" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.036861"></sphere>
+			</geometry>
+			<origin xyz="-0.008998999999999998 -0.035301 -0.023" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.040127"></sphere>
+			</geometry>
+			<origin xyz="-0.009000999999999997 -0.025299999999999996 -0.066698" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019549"></sphere>
+			</geometry>
+			<origin xyz="-0.00027899999999999973 0.016256000000000003 -0.08874" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019963"></sphere>
+			</geometry>
+			<origin xyz="-0.021675 0.013491000000000003 -0.08874" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019139"></sphere>
+			</geometry>
+			<origin xyz="-8.699999999999854e-05 -0.013189999999999999 -0.08874" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.02064"></sphere>
+			</geometry>
+			<origin xyz="-0.023501 -0.023090999999999997 -0.08874" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.018676"></sphere>
+			</geometry>
+			<origin xyz="-0.0048 -0.035012 -0.08874" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="palm"></link>
+	<link name="wrist"></link>
+	<link name="allegro_link0">
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_0.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.015183"></sphere>
+			</geometry>
+			<origin xyz="0.0 -0.00555 0.0082" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.015183"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.00555 0.0082" rpy="0 0 0"></origin>
+		</collision>
+		<inertial>
+			<mass value="0.0119"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="1.01666658333e-06" ixy="0.0" ixz="0.0" iyy="6.47677333333e-07" iyz="0.0" izz="1.01666658333e-06"></inertia>
+		</inertial>
+	</link>
+	<link name="allegro_link1">
+		<inertial>
+			<mass value="0.065"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="7.95654166667e-05" ixy="1.7199e-05" ixz="8.75875e-06" iyy="2.47088833333e-05" iyz="2.413125e-05" izz="7.95654166667e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_1.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.019524"></sphere>
+			</geometry>
+			<origin xyz="0.0 -1e-06 0.0442" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019159"></sphere>
+			</geometry>
+			<origin xyz="-1e-06 0.000541 0.027809" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 1e-06 0.009798999999999999" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link2">
+		<inertial>
+			<mass value="0.0355"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="2.63979183333e-05" ixy="6.67968e-06" ixz="4.783625e-06" iyy="1.34948516667e-05" iyz="9.372e-06" izz="2.63979183333e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_2.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 1e-06 0.009797999999999998" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.0 0.0286" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link3">
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_3.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.017695"></sphere>
+			</geometry>
+			<origin xyz="0.0 -0.00365 0.004699999999999999" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.017694"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.003651 0.0047009999999999994" rpy="0 0 0"></origin>
+		</collision>
+		<inertial>
+			<origin rpy="0 0 0" xyz="0 0 0.01335"></origin>
+			<mass value="0.02"></mass>
+			<inertia ixx="1e-5" ixy="0.0" ixz="0.0" iyy="2e-5" iyz="0.0" izz="2e-5"></inertia>
+		</inertial>
+	</link>
+	<link name="allegro_link3_tip">
+		<inertial>
+			<mass value="0.0168"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_tip.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.016621"></sphere>
+			</geometry>
+			<origin xyz="0.0 1.4230153513872246e-19 0.0004990000000000004" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link4">
+		<inertial>
+			<mass value="0.005"></mass>
+			<origin xyz="0 0 0"></origin>
+			<inertia ixx="5.1458e-05" iyy="5.1458e-05" izz="6.125e-05" ixy="0" ixz="0" iyz="0"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_0.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.015183"></sphere>
+			</geometry>
+			<origin xyz="0.0 -0.00555 0.0082" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.015183"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.00555 0.0082" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link5">
+		<inertial>
+			<mass value="0.065"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="7.95654166667e-05" ixy="1.7199e-05" ixz="8.75875e-06" iyy="2.47088833333e-05" iyz="2.413125e-05" izz="7.95654166667e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_1.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.019524"></sphere>
+			</geometry>
+			<origin xyz="0.0 -1e-06 0.0442" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019159"></sphere>
+			</geometry>
+			<origin xyz="-1e-06 0.000541 0.027809" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 1e-06 0.009798999999999999" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link6">
+		<inertial>
+			<mass value="0.0355"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="2.63979183333e-05" ixy="6.67968e-06" ixz="4.783625e-06" iyy="1.34948516667e-05" iyz="9.372e-06" izz="2.63979183333e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_2.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 1e-06 0.009797999999999998" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.0 0.0286" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link7">
+		<inertial>
+			<mass value="0.0388"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="3.29223173333e-05" ixy="8.042076e-06" ixz="5.2283e-06" iyy="1.47493026667e-5" iyz="1.1283525e-5" izz="3.29223173333e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_3.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.017695"></sphere>
+			</geometry>
+			<origin xyz="0.0 -0.00365 0.004699999999999999" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.017694"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.003651 0.0047009999999999994" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link7_tip">
+		<inertial>
+			<mass value="0.0096"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="4.701248e-06" ixy="1.255968e-06" ixz="1.2936e-06" iyy="3.649312e-06" iyz="1.7622e-06" izz="4.701248e-06"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_tip.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.016621"></sphere>
+			</geometry>
+			<origin xyz="0.0 1.4230153513872246e-19 0.0004990000000000004" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link8">
+		<inertial>
+			<mass value="0.005"></mass>
+			<origin xyz="0 0 0"></origin>
+			<inertia ixx="5.1458e-05" iyy="5.1458e-05" izz="6.125e-05" ixy="0" ixz="0" iyz="0"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_0.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.015183"></sphere>
+			</geometry>
+			<origin xyz="0.0 -0.00555 0.0082" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.015183"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.00555 0.0082" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link9">
+		<inertial>
+			<mass value="0.065"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="7.95654166667e-05" ixy="1.7199e-05" ixz="8.75875e-06" iyy="2.47088833333e-05" iyz="2.413125e-05" izz="7.95654166667e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_1.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.019524"></sphere>
+			</geometry>
+			<origin xyz="0.0 -1e-06 0.0442" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019159"></sphere>
+			</geometry>
+			<origin xyz="-1e-06 0.000541 0.027809" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 1e-06 0.009798999999999999" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link10">
+		<inertial>
+			<mass value="0.0355"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="2.63979183333e-05" ixy="6.67968e-06" ixz="4.783625e-06" iyy="1.34948516667e-05" iyz="9.372e-06" izz="2.63979183333e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_2.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 1e-06 0.009797999999999998" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.0 0.0286" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link11">
+		<inertial>
+			<mass value="0.0096"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="4.701248e-06" ixy="1.255968e-06" ixz="1.2936e-06" iyy="3.649312e-06" iyz="1.7622e-06" izz="4.701248e-06"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_3.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.017695"></sphere>
+			</geometry>
+			<origin xyz="0.0 -0.00365 0.004699999999999999" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.017694"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.003651 0.0047009999999999994" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link11_tip">
+		<inertial>
+			<mass value="0.0168"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_tip.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.016621"></sphere>
+			</geometry>
+			<origin xyz="0.0 1.4230153513872246e-19 0.0004990000000000004" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link12">
+		<inertial>
+			<mass value="0.0176"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="1.89273333333e-5" ixy="7.16716e-06" ixz="5.35568e-06" iyy="1.43008213333e-05" iyz="6.8068e-06" izz="1.89273333333e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_12_right.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.029974"></sphere>
+			</geometry>
+			<origin xyz="-0.0179 0.009001 0.020249999999999997" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.029974"></sphere>
+			</geometry>
+			<origin xyz="-0.017901 0.009000000000000001 0.008749" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link13">
+		<inertial>
+			<mass value="0.0119"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="4.24250866667e-06" ixy="1.032087e-06" ixz="1.603525e-06" iyy="4.52362633333e-06" iyz="1.44808125e-06" izz="4.24250866667e-06"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_13.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.015896"></sphere>
+			</geometry>
+			<origin xyz="0.0 -0.004901 0.00885" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.015896"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.0049 0.00885" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link14">
+		<inertial>
+			<mass value="0.038"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="4.30439933333e-05" ixy="9.57068e-06" ixz="5.1205e-06" iyy="1.44451933333e-05" iyz="1.342825e-05" izz="4.30439933333e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_14.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.019523"></sphere>
+			</geometry>
+			<origin xyz="0.0 -1e-06 0.0416" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.020075"></sphere>
+			</geometry>
+			<origin xyz="0.0 -3.9e-05 0.010809000000000001" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.018558"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.000145 0.029669" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link15">
+		<inertial>
+			<mass value="0.0388"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="3.29223173333e-05" ixy="8.042076e-06" ixz="5.2283e-06" iyy="1.47493026667e-5" iyz="1.1283525e-5" izz="3.29223173333e-05"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_15.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.019344"></sphere>
+			</geometry>
+			<origin xyz="0.0 0.0 0.0011099999999999999" rpy="0 0 0"></origin>
+		</collision>
+		<collision>
+			<geometry>
+				<sphere radius="0.019343"></sphere>
+			</geometry>
+			<origin xyz="0.0 -1.5e-05 0.021412" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<link name="allegro_link15_tip">
+		<inertial>
+			<mass value="0.0168"></mass>
+			<origin xyz="0 0 0" rpy="0 0 0"></origin>
+			<inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07"></inertia>
+		</inertial>
+		<visual>
+			<geometry>
+				<mesh filename="allegro/meshes/visual/link_tip.glb"></mesh>
+			</geometry>
+		</visual>
+		<collision>
+			<geometry>
+				<sphere radius="0.016621"></sphere>
+			</geometry>
+			<origin xyz="0.0 1.4230153513872246e-19 0.0004990000000000004" rpy="0 0 0"></origin>
+		</collision>
+	</link>
+	<joint name="xarm7_joint1" type="revolute">
+		<origin rpy="0 0 0" xyz="0 0 0.267"></origin>
+		<parent link="link_base"></parent>
+		<child link="link1"></child>
+		<axis xyz="0 0 1"></axis>
+		<limit effort="50" lower="-6.28318530718" upper="6.28318530718" velocity="3.14"></limit>
+		<dynamics damping="10" friction="1"></dynamics>
+	</joint>
+	<joint name="xarm7_joint2" type="revolute">
+		<origin rpy="-1.5708 0 0" xyz="0 0 0"></origin>
+		<parent link="link1"></parent>
+		<child link="link2"></child>
+		<axis xyz="0 0 1"></axis>
+		<limit effort="50" lower="-2.059" upper="2.0944" velocity="3.14"></limit>
+		<dynamics damping="10" friction="1"></dynamics>
+	</joint>
+	<joint name="xarm7_joint3" type="revolute">
+		<origin rpy="1.5708 0 0" xyz="0 -0.293 0"></origin>
+		<parent link="link2"></parent>
+		<child link="link3"></child>
+		<axis xyz="0 0 1"></axis>
+		<limit effort="30" lower="-6.28318530718" upper="6.28318530718" velocity="3.14"></limit>
+		<dynamics damping="5" friction="1"></dynamics>
+	</joint>
+	<joint name="xarm7_joint4" type="revolute">
+		<origin rpy="1.5708 0 0" xyz="0.0525 0 0"></origin>
+		<parent link="link3"></parent>
+		<child link="link4"></child>
+		<axis xyz="0 0 1"></axis>
+		<limit effort="30" lower="-0.19198" upper="3.927" velocity="3.14"></limit>
+		<dynamics damping="5" friction="1"></dynamics>
+	</joint>
+	<joint name="xarm7_joint5" type="revolute">
+		<origin rpy="1.5708 0 0" xyz="0.0775 -0.3425 0"></origin>
+		<parent link="link4"></parent>
+		<child link="link5"></child>
+		<axis xyz="0 0 1"></axis>
+		<limit effort="30" lower="-6.28318530718" upper="6.28318530718" velocity="3.14"></limit>
+		<dynamics damping="5" friction="1"></dynamics>
+	</joint>
+	<joint name="xarm7_joint6" type="revolute">
+		<origin rpy="1.5708 0 0" xyz="0 0 0"></origin>
+		<parent link="link5"></parent>
+		<child link="link6"></child>
+		<axis xyz="0 0 1"></axis>
+		<limit effort="20" lower="-1.69297" upper="3.14159265359" velocity="3.14"></limit>
+		<dynamics damping="2" friction="1"></dynamics>
+	</joint>
+	<joint name="xarm7_joint7" type="revolute">
+		<origin rpy="-1.5708 0 0" xyz="0.076 0.097 0"></origin>
+		<parent link="link6"></parent>
+		<child link="link7"></child>
+		<axis xyz="0 0 1"></axis>
+		<limit effort="20" lower="-6.28318530718" upper="6.28318530718" velocity="3.14"></limit>
+		<dynamics damping="2" friction="1"></dynamics>
+	</joint>
+	<joint name="part_studio_joint" type="fixed">
+		<parent link="link7"></parent>
+		<child link="part_studio_link"></child>
+		<origin rpy="0 0 -1.571" xyz="0.01 0 0.0"></origin>
+	</joint>
+	<joint name="panda_hand_joint" type="fixed">
+		<parent link="part_studio_link"></parent>
+		<child link="base_link"></child>
+		<origin rpy="0 -1.5707 -1.5707" xyz="0.00 0.12 0.025"></origin>
+	</joint>
+	<joint name="palm_joint" type="fixed">
+		<parent link="base_link"></parent>
+		<child link="palm"></child>
+		<origin rpy="0.00000 -0.00000 0.00000" xyz="0 0 -0.065"></origin>
+	</joint>
+	<joint name="wrist_joint" type="fixed">
+		<origin rpy="0 0 0" xyz="0 0 -0.03"></origin>
+		<parent link="palm"></parent>
+		<child link="wrist"></child>
+	</joint>
+	<joint name="allegro_joint0" type="revolute">
+		<axis xyz="0 0 1"></axis>
+		<limit effort="10" lower="-0.47" upper="0.47" velocity="3.14"></limit>
+		<parent link="base_link"></parent>
+		<child link="allegro_link0"></child>
+		<origin rpy="-0.08726646255 0 0" xyz="0 0.0435 -0.001542"></origin>
+	</joint>
+	<joint name="allegro_joint1" type="revolute">
+		<limit effort="10" lower="-0.196" upper="1.61" velocity="3.14"></limit>
+		<axis xyz="0 1 0"></axis>
+		<parent link="allegro_link0"></parent>
+		<child link="allegro_link1"></child>
+		<origin xyz="0 0 0.0164"></origin>
+	</joint>
+	<joint name="allegro_joint2" type="revolute">
+		<axis xyz="0 1 0"></axis>
+		<limit effort="10" lower="-0.174" upper="1.709" velocity="3.14"></limit>
+		<parent link="allegro_link1"></parent>
+		<child link="allegro_link2"></child>
+		<origin xyz="0 0 0.054"></origin>
+	</joint>
+	<joint name="allegro_joint3" type="revolute">
+		<axis xyz="0 1 0"></axis>
+		<limit effort="10" lower="-0.227" upper="1.618" velocity="3.14"></limit>
+		<parent link="allegro_link2"></parent>
+		<child link="allegro_link3"></child>
+		<origin xyz="0 0 0.0384"></origin>
+	</joint>
+	<joint name="allegro_joint3_tip" type="fixed">
+		<parent link="allegro_link3"></parent>
+		<child link="allegro_link3_tip"></child>
+		<origin rpy="0 0 0" xyz="0 0 0.0267"></origin>
+	</joint>
+	<joint name="allegro_joint4" type="revolute">
+		<axis xyz="0 0 1"></axis>
+		<limit effort="10" lower="-0.47" upper="0.47" velocity="3.14"></limit>
+		<parent link="base_link"></parent>
+		<child link="allegro_link4"></child>
+		<origin rpy="0.0 0 0" xyz="0 0 0.0007"></origin>
+	</joint>
+	<joint name="allegro_joint5" type="revolute">
+		<limit effort="10" lower="-0.196" upper="1.61" velocity="3.14"></limit>
+		<axis xyz="0 1 0"></axis>
+		<parent link="allegro_link4"></parent>
+		<child link="allegro_link5"></child>
+		<origin xyz="0 0 0.0164"></origin>
+	</joint>
+	<joint name="allegro_joint6" type="revolute">
+		<axis xyz="0 1 0"></axis>
+		<limit effort="10" lower="-0.174" upper="1.709" velocity="3.14"></limit>
+		<parent link="allegro_link5"></parent>
+		<child link="allegro_link6"></child>
+		<origin xyz="0 0 0.054"></origin>
+	</joint>
+	<joint name="allegro_joint7" type="revolute">
+		<axis xyz="0 1 0"></axis>
+		<limit effort="10" lower="-0.227" upper="1.618" velocity="3.14"></limit>
+		<parent link="allegro_link6"></parent>
+		<child link="allegro_link7"></child>
+		<origin xyz="0 0 0.0384"></origin>
+	</joint>
+	<joint name="allegro_joint7_tip" type="fixed">
+		<parent link="allegro_link7"></parent>
+		<child link="allegro_link7_tip"></child>
+		<origin rpy="0 0 0" xyz="0 0 0.0267"></origin>
+	</joint>
+	<joint name="allegro_joint8" type="revolute">
+		<axis xyz="0 0 1"></axis>
+		<limit effort="10" lower="-0.47" upper="0.47" velocity="3.14"></limit>
+		<parent link="base_link"></parent>
+		<child link="allegro_link8"></child>
+		<origin rpy="0.08726646255 0 0" xyz="0 -0.0435 -0.001542"></origin>
+	</joint>
+	<joint name="allegro_joint9" type="revolute">
+		<limit effort="10" lower="-0.196" upper="1.61" velocity="3.14"></limit>
+		<axis xyz="0 1 0"></axis>
+		<parent link="allegro_link8"></parent>
+		<child link="allegro_link9"></child>
+		<origin xyz="0 0 0.0164"></origin>
+	</joint>
+	<joint name="allegro_joint10" type="revolute">
+		<axis xyz="0 1 0"></axis>
+		<limit effort="10" lower="-0.174" upper="1.709" velocity="3.14"></limit>
+		<parent link="allegro_link9"></parent>
+		<child link="allegro_link10"></child>
+		<origin xyz="0 0 0.054"></origin>
+	</joint>
+	<joint name="allegro_joint11" type="revolute">
+		<axis xyz="0 1 0"></axis>
+		<limit effort="10" lower="-0.227" upper="1.618" velocity="3.14"></limit>
+		<parent link="allegro_link10"></parent>
+		<child link="allegro_link11"></child>
+		<origin xyz="0 0 0.0384"></origin>
+	</joint>
+	<joint name="allegro_joint11_tip" type="fixed">
+		<parent link="allegro_link11"></parent>
+		<child link="allegro_link11_tip"></child>
+		<origin rpy="0 0 0" xyz="0 0 0.0267"></origin>
+	</joint>
+	<joint name="allegro_joint12" type="revolute">
+		<axis xyz="-1 0 0"></axis>
+		<limit effort="10" lower="0.263" upper="1.396" velocity="3.14"></limit>
+		<parent link="base_link"></parent>
+		<child link="allegro_link12"></child>
+		<origin rpy="0 -1.65806278845 -1.5707963259" xyz="-0.0182 0.019333 -0.045987"></origin>
+	</joint>
+	<joint name="allegro_joint13" type="revolute">
+		<axis xyz="0 0 1"></axis>
+		<limit effort="10" lower="-0.105" upper="1.163" velocity="3.14"></limit>
+		<parent link="allegro_link12"></parent>
+		<child link="allegro_link13"></child>
+		<origin xyz="-0.027 0.005 0.0399"></origin>
+	</joint>
+	<joint name="allegro_joint14" type="revolute">
+		<axis xyz="0 1 0"></axis>
+		<limit effort="10" lower="-0.189" upper="1.644" velocity="3.14"></limit>
+		<parent link="allegro_link13"></parent>
+		<child link="allegro_link14"></child>
+		<origin xyz="0 0 0.0177"></origin>
+	</joint>
+	<joint name="allegro_joint15" type="revolute">
+		<axis xyz="0 1 0"></axis>
+		<limit effort="10" lower="-0.162" upper="1.719" velocity="3.14"></limit>
+		<parent link="allegro_link14"></parent>
+		<child link="allegro_link15"></child>
+		<origin xyz="0 0 0.0514"></origin>
+	</joint>
+	<joint name="allegro_joint15_tip" type="fixed">
+		<parent link="allegro_link15"></parent>
+		<child link="allegro_link15_tip"></child>
+		<origin rpy="0 0 0" xyz="0 0 0.0423"></origin>
+	</joint>
+</robot>

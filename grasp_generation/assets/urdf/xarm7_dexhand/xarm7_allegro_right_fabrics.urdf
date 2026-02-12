@@ -1,0 +1,1326 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="xarm7">
+  <link name="link_base">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.021131 -0.0016302 0.056488" />
+      <mass value="0.88556" />
+      <inertia ixx="0.0030595" ixy="0.00012259" ixz="-0.00062705" iyy="0.0037783" iyz="0.00027023" izz="0.0020125" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/link_base.glb" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/link_base.obj" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </collision>
+    </link>
+  <link name="link1">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0002 0.02905 -0.01233" />
+      <mass value="2.382" />
+      <inertia ixx="0.0056905" ixy="-1.579e-05" ixz="5.125e-06" iyy="0.0049566" iyz="-0.000873378" izz="0.003316654" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/link1.glb" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/link1.obj" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </collision>
+    </link>
+  <joint name="xarm7_joint1" type="revolute">
+    <origin rpy="0 0 0" xyz="0 0 0.267" />
+    <parent link="link_base" />
+    <child link="link1" />
+    <axis xyz="0 0 1" />
+    <limit effort="50" lower="-6.28318530718" upper="6.28318530718" velocity="3.14" />
+    <dynamics damping="10" friction="1" />
+    </joint>
+  <link name="link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.00022 -0.12856 0.01735" />
+      <mass value="1.869" />
+      <inertia ixx="0.0095989" ixy="1.541e-06" ixz="5.56e-06" iyy="0.00382472" iyz="-0.00317156" izz="0.007565669" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/link2.glb" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/link2.obj" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </collision>
+    </link>
+  <joint name="xarm7_joint2" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0 0 0" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="0 0 1" />
+    <limit effort="50" lower="-2.059" upper="2.0944" velocity="3.14" />
+    <dynamics damping="10" friction="1" />
+    </joint>
+  <link name="link3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.0466 -0.02463 -0.00768" />
+      <mass value="1.6383" />
+      <inertia ixx="0.00310955" ixy="0.00030837" ixz="-0.00058453" iyy="0.00264483" iyz="0.000338893" izz="0.0026624" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/link3.glb" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/link3.obj" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </collision>
+    </link>
+  <joint name="xarm7_joint3" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0 -0.293 0" />
+    <parent link="link2" />
+    <child link="link3" />
+    <axis xyz="0 0 1" />
+    <limit effort="30" lower="-6.28318530718" upper="6.28318530718" velocity="3.14" />
+    <dynamics damping="5" friction="1" />
+    </joint>
+  <link name="link4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.07047 -0.11575 0.012" />
+      <mass value="1.7269" />
+      <inertia ixx="0.005889" ixy="0.00137112" ixz="0.00088143" iyy="0.00359703" iyz="-0.001762155" izz="0.00543244" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/link4.glb" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/link4.obj" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </collision>
+    </link>
+  <joint name="xarm7_joint4" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0.0525 0 0" />
+    <parent link="link3" />
+    <child link="link4" />
+    <axis xyz="0 0 1" />
+    <limit effort="30" lower="-0.19198" upper="3.927" velocity="3.14" />
+    <dynamics damping="5" friction="1" />
+    </joint>
+  <link name="link5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.00032 0.01604 -0.026" />
+      <mass value="1.3203" />
+      <inertia ixx="0.00534665" ixy="1.5117e-05" ixz="-3.69e-07" iyy="0.0049779" iyz="-0.00022132" izz="0.0013624" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/link5.glb" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/link5.obj" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </collision>
+    </link>
+  <joint name="xarm7_joint5" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0.0775 -0.3425 0" />
+    <parent link="link4" />
+    <child link="link5" />
+    <axis xyz="0 0 1" />
+    <limit effort="30" lower="-6.28318530718" upper="6.28318530718" velocity="3.14" />
+    <dynamics damping="5" friction="1" />
+    </joint>
+  <link name="link6">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.06469 0.03278 0.02141" />
+      <mass value="1.325" />
+      <inertia ixx="0.0014745" ixy="-0.000488" ixz="0.0002953" iyy="0.0019037" iyz="0.00014749" izz="0.0023652" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/link6.glb" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/link6.obj" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </collision>
+    </link>
+  <joint name="xarm7_joint6" type="revolute">
+    <origin rpy="1.5708 0 0" xyz="0 0 0" />
+    <parent link="link5" />
+    <child link="link6" />
+    <axis xyz="0 0 1" />
+    <limit effort="20" lower="-1.69297" upper="3.14159265359" velocity="3.14" />
+    <dynamics damping="2" friction="1" />
+    </joint>
+  <link name="link7">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 -0.00677 -0.01098" />
+      <mass value="0.17" />
+      <inertia ixx="9.3e-05" ixy="-0.0" ixz="-0.0" iyy="5.87e-05" iyz="-3.6e-06" izz="0.000132" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="meshes/visual/link7.glb" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="meshes/collision/link7.obj" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      </collision>
+    </link>
+  <joint name="xarm7_joint7" type="revolute">
+    <origin rpy="-1.5708 0 0" xyz="0.076 0.097 0" />
+    <parent link="link6" />
+    <child link="link7" />
+    <axis xyz="0 0 1" />
+    <limit effort="20" lower="-6.28318530718" upper="6.28318530718" velocity="3.14" />
+    <dynamics damping="2" friction="1" />
+    </joint>
+  <link name="part_studio_link">
+    <visual>
+      <origin rpy="-1.571 0 0" />
+      <geometry>
+        <mesh filename="hand_mount/meshes/visual/mount_v4.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+      </visual>
+    <collision>
+      <origin rpy="-1.571 0 0" />
+      <geometry>
+        <mesh filename="hand_mount/meshes/collision/mount_v4.stl" scale="0.001 0.001 0.001" />
+        </geometry>
+      </collision>
+    </link>
+  <joint name="part_studio_joint" type="fixed">
+    <parent link="link7" />
+    <child link="part_studio_link" />
+    <origin rpy="0 0 -1.571" xyz="0.01 0 0.0" />
+    </joint>
+  <joint name="panda_hand_joint" type="fixed">
+    <parent link="part_studio_link" />
+    <child link="base_link" />
+    <origin rpy="0 -1.5707 -1.5707" xyz="0.00 0.12 0.025" />
+    </joint>
+  <link name="base_link">
+    <inertial>
+      <mass value="0.4154" />
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <inertia ixx="1e-4" ixy="0" ixz="0" iyy="1e-4" iyz="0" izz="1e-4" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/base_link.glb" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0 " />
+      </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.009 0.0 -0.023" />
+      <geometry>
+        <box size="0.0414 0.112 0.0448" />
+        </geometry>
+      </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.009 -0.0253 -0.0667" />
+      <geometry>
+        <box size="0.0414 0.0538 0.0428" />
+        </geometry>
+      </collision>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.009300 -0.00557 -0.08874" />
+      <geometry>
+        <box size="0.0414 0.0720 0.013" />
+        </geometry>
+      </collision>
+    </link>
+  <link name="palm" />
+  <joint name="palm_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="palm" />
+    <origin rpy="0.00000 -0.00000 0.00000" xyz="0 0 -0.065" />
+    </joint>
+  <link name="wrist" />
+  <joint name="wrist_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 -0.03" />
+    <parent link="palm" />
+    <child link="wrist" />
+    </joint>
+  <link name="allegro_link0">
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_0.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.0164" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0082" />
+      </collision>
+    <inertial>
+      <mass value="0.0119" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="1.01666658333e-06" ixy="0.0" ixz="0.0" iyy="6.47677333333e-07" iyz="0.0" izz="1.01666658333e-06" />
+      </inertial>
+    </link>
+  <joint name="allegro_joint0" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="10" lower="-0.47" upper="0.47" velocity="3.14" />
+    <parent link="base_link" />
+    <child link="allegro_link0" />
+    <origin rpy="-0.08726646255 0 0" xyz="0 0.0435 -0.001542" />
+    </joint>
+  <link name="allegro_link1">
+    <inertial>
+      <mass value="0.065" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="7.95654166667e-05" ixy="1.7199e-05" ixz="8.75875e-06" iyy="2.47088833333e-05" iyz="2.413125e-05" izz="7.95654166667e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_1.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.054" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.027" />
+      </collision>
+    </link>
+  <joint name="allegro_joint1" type="revolute">
+    <limit effort="10" lower="-0.196" upper="1.61" velocity="3.14" />
+    <axis xyz="0 1 0" />
+    <parent link="allegro_link0" />
+    <child link="allegro_link1" />
+    <origin xyz="0 0 0.0164" />
+    </joint>
+  <link name="allegro_link2">
+    <inertial>
+      <mass value="0.0355" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="2.63979183333e-05" ixy="6.67968e-06" ixz="4.783625e-06" iyy="1.34948516667e-05" iyz="9.372e-06" izz="2.63979183333e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_2.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.0384" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0192" />
+      </collision>
+    </link>
+  <joint name="allegro_joint2" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="10" lower="-0.174" upper="1.709" velocity="3.14" />
+    <parent link="allegro_link1" />
+    <child link="allegro_link2" />
+    <origin xyz="0 0 0.054" />
+    </joint>
+  <link name="allegro_link3">
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_3.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0269 0.022" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0047" />
+      </collision>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0.01335" />
+      <mass value="0.02" />
+      <inertia ixx="1e-5" ixy="0.0" ixz="0.0" iyy="2e-5" iyz="0.0" izz="2e-5" />
+      </inertial>
+    </link>
+  <joint name="allegro_joint3" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="10" lower="-0.227" upper="1.618" velocity="3.14" />
+    <parent link="allegro_link2" />
+    <child link="allegro_link3" />
+    <origin xyz="0 0 0.0384" />
+    </joint>
+  <link name="allegro_link3_tip">
+    <inertial>
+      <mass value="0.0168" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_tip.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="allegro/meshes/collision/link_tip.obj" />
+        </geometry>
+      </collision>
+    </link>
+  <joint name="allegro_joint3_tip" type="fixed">
+    <parent link="allegro_link3" />
+    <child link="allegro_link3_tip" />
+    <origin rpy="0 0 0" xyz="0 0 0.0267" />
+    </joint>
+  <link name="allegro_link4">
+    <inertial>
+      <mass value="0.005" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="5.1458e-05" iyy="5.1458e-05" izz="6.125e-05" ixy="0" ixz="0" iyz="0" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_0.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.0164" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0082" />
+      </collision>
+    </link>
+  <joint name="allegro_joint4" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="10" lower="-0.47" upper="0.47" velocity="3.14" />
+    <parent link="base_link" />
+    <child link="allegro_link4" />
+    <origin rpy="0.0 0 0" xyz="0 0 0.0007" />
+    </joint>
+  <link name="allegro_link5">
+    <inertial>
+      <mass value="0.065" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="7.95654166667e-05" ixy="1.7199e-05" ixz="8.75875e-06" iyy="2.47088833333e-05" iyz="2.413125e-05" izz="7.95654166667e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_1.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.054" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.027" />
+      </collision>
+    </link>
+  <joint name="allegro_joint5" type="revolute">
+    <limit effort="10" lower="-0.196" upper="1.61" velocity="3.14" />
+    <axis xyz="0 1 0" />
+    <parent link="allegro_link4" />
+    <child link="allegro_link5" />
+    <origin xyz="0 0 0.0164" />
+    </joint>
+  <link name="allegro_link6">
+    <inertial>
+      <mass value="0.0355" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="2.63979183333e-05" ixy="6.67968e-06" ixz="4.783625e-06" iyy="1.34948516667e-05" iyz="9.372e-06" izz="2.63979183333e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_2.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.0384" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0192" />
+      </collision>
+    </link>
+  <joint name="allegro_joint6" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="10" lower="-0.174" upper="1.709" velocity="3.14" />
+    <parent link="allegro_link5" />
+    <child link="allegro_link6" />
+    <origin xyz="0 0 0.054" />
+    </joint>
+  <link name="allegro_link7">
+    <inertial>
+      <mass value="0.0388" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="3.29223173333e-05" ixy="8.042076e-06" ixz="5.2283e-06" iyy="1.47493026667e-5" iyz="1.1283525e-5" izz="3.29223173333e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_3.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0269 0.022" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0047" />
+      </collision>
+    </link>
+  <joint name="allegro_joint7" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="10" lower="-0.227" upper="1.618" velocity="3.14" />
+    <parent link="allegro_link6" />
+    <child link="allegro_link7" />
+    <origin xyz="0 0 0.0384" />
+    </joint>
+  <link name="allegro_link7_tip">
+    <inertial>
+      <mass value="0.0096" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="4.701248e-06" ixy="1.255968e-06" ixz="1.2936e-06" iyy="3.649312e-06" iyz="1.7622e-06" izz="4.701248e-06" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_tip.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="allegro/meshes/collision/link_tip.obj" />
+        </geometry>
+      </collision>
+    </link>
+  <joint name="allegro_joint7_tip" type="fixed">
+    <parent link="allegro_link7" />
+    <child link="allegro_link7_tip" />
+    <origin rpy="0 0 0" xyz="0 0 0.0267" />
+    </joint>
+  <link name="allegro_link8">
+    <inertial>
+      <mass value="0.005" />
+      <origin xyz="0 0 0" />
+      <inertia ixx="5.1458e-05" iyy="5.1458e-05" izz="6.125e-05" ixy="0" ixz="0" iyz="0" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_0.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.0164" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0082" />
+      </collision>
+    </link>
+  <joint name="allegro_joint8" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="10" lower="-0.47" upper="0.47" velocity="3.14" />
+    <parent link="base_link" />
+    <child link="allegro_link8" />
+    <origin rpy="0.08726646255 0 0" xyz="0 -0.0435 -0.001542" />
+    </joint>
+  <link name="allegro_link9">
+    <inertial>
+      <mass value="0.065" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="7.95654166667e-05" ixy="1.7199e-05" ixz="8.75875e-06" iyy="2.47088833333e-05" iyz="2.413125e-05" izz="7.95654166667e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_1.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.054" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.027" />
+      </collision>
+    </link>
+  <joint name="allegro_joint9" type="revolute">
+    <limit effort="10" lower="-0.196" upper="1.61" velocity="3.14" />
+    <axis xyz="0 1 0" />
+    <parent link="allegro_link8" />
+    <child link="allegro_link9" />
+    <origin xyz="0 0 0.0164" />
+    </joint>
+  <link name="allegro_link10">
+    <inertial>
+      <mass value="0.0355" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="2.63979183333e-05" ixy="6.67968e-06" ixz="4.783625e-06" iyy="1.34948516667e-05" iyz="9.372e-06" izz="2.63979183333e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_2.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.0384" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0192" />
+      </collision>
+    </link>
+  <joint name="allegro_joint10" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="10" lower="-0.174" upper="1.709" velocity="3.14" />
+    <parent link="allegro_link9" />
+    <child link="allegro_link10" />
+    <origin xyz="0 0 0.054" />
+    </joint>
+  <link name="allegro_link11">
+    <inertial>
+      <mass value="0.0096" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="4.701248e-06" ixy="1.255968e-06" ixz="1.2936e-06" iyy="3.649312e-06" iyz="1.7622e-06" izz="4.701248e-06" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_3.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0269 0.022" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0047" />
+      </collision>
+    </link>
+  <joint name="allegro_joint11" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="10" lower="-0.227" upper="1.618" velocity="3.14" />
+    <parent link="allegro_link10" />
+    <child link="allegro_link11" />
+    <origin xyz="0 0 0.0384" />
+    </joint>
+  <link name="allegro_link11_tip">
+    <inertial>
+      <mass value="0.0168" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_tip.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="allegro/meshes/collision/link_tip.obj" />
+        </geometry>
+      </collision>
+    </link>
+  <joint name="allegro_joint11_tip" type="fixed">
+    <parent link="allegro_link11" />
+    <child link="allegro_link11_tip" />
+    <origin rpy="0 0 0" xyz="0 0 0.0267" />
+    </joint>
+  <link name="allegro_link12">
+    <inertial>
+      <mass value="0.0176" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="1.89273333333e-5" ixy="7.16716e-06" ixz="5.35568e-06" iyy="1.43008213333e-05" iyz="6.8068e-06" izz="1.89273333333e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_12_right.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0358 0.034 0.0455" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="-0.0179 0.009 0.0145" />
+      </collision>
+    </link>
+  <joint name="allegro_joint12" type="revolute">
+    <axis xyz="-1 0 0" />
+    <limit effort="10" lower="0.263" upper="1.396" velocity="3.14" />
+    <parent link="base_link" />
+    <child link="allegro_link12" />
+    <origin rpy="0 -1.65806278845 -1.5707963259" xyz="-0.0182 0.019333 -0.045987" />
+    </joint>
+  <link name="allegro_link13">
+    <inertial>
+      <mass value="0.0119" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="4.24250866667e-06" ixy="1.032087e-06" ixz="1.603525e-06" iyy="4.52362633333e-06" iyz="1.44808125e-06" izz="4.24250866667e-06" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_13.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.0177" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.00885" />
+      </collision>
+    </link>
+  <joint name="allegro_joint13" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="10" lower="-0.105" upper="1.163" velocity="3.14" />
+    <parent link="allegro_link12" />
+    <child link="allegro_link13" />
+    <origin xyz="-0.027 0.005 0.0399" />
+    </joint>
+  <link name="allegro_link14">
+    <inertial>
+      <mass value="0.038" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="4.30439933333e-05" ixy="9.57068e-06" ixz="5.1205e-06" iyy="1.44451933333e-05" iyz="1.342825e-05" izz="4.30439933333e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_14.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0275 0.0514" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.0257" />
+      </collision>
+    </link>
+  <joint name="allegro_joint14" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="10" lower="-0.189" upper="1.644" velocity="3.14" />
+    <parent link="allegro_link13" />
+    <child link="allegro_link14" />
+    <origin xyz="0 0 0.0177" />
+    </joint>
+  <link name="allegro_link15">
+    <inertial>
+      <mass value="0.0388" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="3.29223173333e-05" ixy="8.042076e-06" ixz="5.2283e-06" iyy="1.47493026667e-5" iyz="1.1283525e-5" izz="3.29223173333e-05" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_15.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <box size="0.0196 0.0269 0.04" />
+        </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.01125" />
+      </collision>
+    </link>
+  <joint name="allegro_joint15" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="10" lower="-0.162" upper="1.719" velocity="3.14" />
+    <parent link="allegro_link14" />
+    <child link="allegro_link15" />
+    <origin xyz="0 0 0.0514" />
+    </joint>
+  <link name="allegro_link15_tip">
+    <inertial>
+      <mass value="0.0168" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <inertia ixx="9.68e-07" ixy="0" ixz="0" iyy="9.68e-07" iyz="0" izz="9.68e-07" />
+      </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="allegro/meshes/visual/link_tip.glb" />
+        </geometry>
+      </visual>
+    <collision>
+      <geometry>
+        <mesh filename="allegro/meshes/collision/link_tip.obj" />
+        </geometry>
+      </collision>
+    </link>
+  <joint name="allegro_joint15_tip" type="fixed">
+    <parent link="allegro_link15" />
+    <child link="allegro_link15_tip" />
+    <origin rpy="0 0 0" xyz="0 0 0.0423" />
+    </joint>
+  <link name="link_base_sphere1" />
+  <joint name="link_base_joint_sphere1" type="fixed">
+    <parent link="link_base" />
+    <child link="link_base_sphere1" />
+    <origin rpy="0 0 0" xyz="-0.009823 -0.00042 0.045933" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link_base_sphere2" />
+  <joint name="link_base_joint_sphere2" type="fixed">
+    <parent link="link_base" />
+    <child link="link_base_sphere2" />
+    <origin rpy="0 0 0" xyz="0.001143 0.001023 0.096427" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link1_sphere1" />
+  <joint name="link1_joint_sphere1" type="fixed">
+    <parent link="link1" />
+    <child link="link1_sphere1" />
+    <origin rpy="0 0 0" xyz="0.000119 0.016853 -0.00018" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link1_sphere2" />
+  <joint name="link1_joint_sphere2" type="fixed">
+    <parent link="link1" />
+    <child link="link1_sphere2" />
+    <origin rpy="0 0 0" xyz="-0.000234 -0.004739 -0.065576" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link2_sphere1" />
+  <joint name="link2_joint_sphere1" type="fixed">
+    <parent link="link2" />
+    <child link="link2_sphere1" />
+    <origin rpy="0 0 0" xyz="-0.00171 -0.095399 0.072802" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link2_sphere2" />
+  <joint name="link2_joint_sphere2" type="fixed">
+    <parent link="link2" />
+    <child link="link2_sphere2" />
+    <origin rpy="0 0 0" xyz="-0.000301 -0.133322 0.001671" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link2_sphere3" />
+  <joint name="link2_joint_sphere3" type="fixed">
+    <parent link="link2" />
+    <child link="link2_sphere3" />
+    <origin rpy="0 0 0" xyz="-0.015401 0.005834 0.096103" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link2_sphere4" />
+  <joint name="link2_joint_sphere4" type="fixed">
+    <parent link="link2" />
+    <child link="link2_sphere4" />
+    <origin rpy="0 0 0" xyz="0.022087 0.000248 0.094505" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link3_sphere1" />
+  <joint name="link3_joint_sphere1" type="fixed">
+    <parent link="link3" />
+    <child link="link3_sphere1" />
+    <origin rpy="0 0 0" xyz="0.013209 0.010032 -0.045652" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link3_sphere2" />
+  <joint name="link3_joint_sphere2" type="fixed">
+    <parent link="link3" />
+    <child link="link3_sphere2" />
+    <origin rpy="0 0 0" xyz="0.050794 -0.003524 -0.000414" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link4_sphere1" />
+  <joint name="link4_joint_sphere1" type="fixed">
+    <parent link="link4" />
+    <child link="link4_sphere1" />
+    <origin rpy="0 0 0" xyz="0.069956 -0.080383 0.061747" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link4_sphere2" />
+  <joint name="link4_joint_sphere2" type="fixed">
+    <parent link="link4" />
+    <child link="link4_sphere2" />
+    <origin rpy="0 0 0" xyz="0.077847 -0.091376 0.014255" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link4_sphere3" />
+  <joint name="link4_joint_sphere3" type="fixed">
+    <parent link="link4" />
+    <child link="link4_sphere3" />
+    <origin rpy="0 0 0" xyz="0.077936 -0.130772 0.007635" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link4_sphere4" />
+  <joint name="link4_joint_sphere4" type="fixed">
+    <parent link="link4" />
+    <child link="link4_sphere4" />
+    <origin rpy="0 0 0" xyz="0.026582 -0.023333 0.083471" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link4_sphere5" />
+  <joint name="link4_joint_sphere5" type="fixed">
+    <parent link="link4" />
+    <child link="link4_sphere5" />
+    <origin rpy="0 0 0" xyz="-0.001109 -0.001125 0.086548" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link5_sphere1" />
+  <joint name="link5_joint_sphere1" type="fixed">
+    <parent link="link5" />
+    <child link="link5_sphere1" />
+    <origin rpy="0 0 0" xyz="0.002048 0.003509 -0.144887" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link5_sphere2" />
+  <joint name="link5_joint_sphere2" type="fixed">
+    <parent link="link5" />
+    <child link="link5_sphere2" />
+    <origin rpy="0 0 0" xyz="-7.5e-05 0.053318 -0.031886" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link5_sphere3" />
+  <joint name="link5_joint_sphere3" type="fixed">
+    <parent link="link5" />
+    <child link="link5_sphere3" />
+    <origin rpy="0 0 0" xyz="-0.00063 0.040215 -0.000145" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link5_sphere4" />
+  <joint name="link5_joint_sphere4" type="fixed">
+    <parent link="link5" />
+    <child link="link5_sphere4" />
+    <origin rpy="0 0 0" xyz="-0.002708 0.042677 -0.109673" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link5_sphere5" />
+  <joint name="link5_joint_sphere5" type="fixed">
+    <parent link="link5" />
+    <child link="link5_sphere5" />
+    <origin rpy="0 0 0" xyz="0.000113 0.061089 -0.080479" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link6_sphere1" />
+  <joint name="link6_joint_sphere1" type="fixed">
+    <parent link="link6" />
+    <child link="link6_sphere1" />
+    <origin rpy="0 0 0" xyz="0.020125 0.000188 0.021902" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link6_sphere2" />
+  <joint name="link6_joint_sphere2" type="fixed">
+    <parent link="link6" />
+    <child link="link6_sphere2" />
+    <origin rpy="0 0 0" xyz="0.075982 0.020571 6.9e-05" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link7_sphere1" />
+  <joint name="link7_joint_sphere1" type="fixed">
+    <parent link="link7" />
+    <child link="link7_sphere1" />
+    <origin rpy="0 0 0" xyz="0.000157 0.001368 -0.013522" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="link7_sphere2" />
+  <joint name="link7_joint_sphere2" type="fixed">
+    <parent link="link7" />
+    <child link="link7_sphere2" />
+    <origin rpy="0 0 0" xyz="-0.009807 -0.014766 -0.013716" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="part_studio_link_sphere1" />
+  <joint name="part_studio_link_joint_sphere1" type="fixed">
+    <parent link="part_studio_link" />
+    <child link="part_studio_link_sphere1" />
+    <origin rpy="0 0 0" xyz="0.006324 -0.030366 0.019107" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="part_studio_link_sphere2" />
+  <joint name="part_studio_link_joint_sphere2" type="fixed">
+    <parent link="part_studio_link" />
+    <child link="part_studio_link_sphere2" />
+    <origin rpy="0 0 0" xyz="0.010976 0.010591 0.016811" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="part_studio_link_sphere3" />
+  <joint name="part_studio_link_joint_sphere3" type="fixed">
+    <parent link="part_studio_link" />
+    <child link="part_studio_link_sphere3" />
+    <origin rpy="0 0 0" xyz="-0.007477 -0.01159 0.016438" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="part_studio_link_sphere4" />
+  <joint name="part_studio_link_joint_sphere4" type="fixed">
+    <parent link="part_studio_link" />
+    <child link="part_studio_link_sphere4" />
+    <origin rpy="0 0 0" xyz="-0.01246 -0.038981 0.028482" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="part_studio_link_sphere5" />
+  <joint name="part_studio_link_joint_sphere5" type="fixed">
+    <parent link="part_studio_link" />
+    <child link="part_studio_link_sphere5" />
+    <origin rpy="0 0 0" xyz="-0.019719 0.024844 0.016603" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="part_studio_link_sphere6" />
+  <joint name="part_studio_link_joint_sphere6" type="fixed">
+    <parent link="part_studio_link" />
+    <child link="part_studio_link_sphere6" />
+    <origin rpy="0 0 0" xyz="0.009259 -0.044264 0.041206" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="part_studio_link_sphere7" />
+  <joint name="part_studio_link_joint_sphere7" type="fixed">
+    <parent link="part_studio_link" />
+    <child link="part_studio_link_sphere7" />
+    <origin rpy="0 0 0" xyz="-0.043954 0.046249 0.017675" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="base_link_sphere1" />
+  <joint name="base_link_joint_sphere1" type="fixed">
+    <parent link="base_link" />
+    <child link="base_link_sphere1" />
+    <origin rpy="0 0 0" xyz="-0.009001 -0.0253 -0.066698" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="base_link_sphere2" />
+  <joint name="base_link_joint_sphere2" type="fixed">
+    <parent link="base_link" />
+    <child link="base_link_sphere2" />
+    <origin rpy="0 0 0" xyz="-0.009 0.0353 -0.023001" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="base_link_sphere3" />
+  <joint name="base_link_joint_sphere3" type="fixed">
+    <parent link="base_link" />
+    <child link="base_link_sphere3" />
+    <origin rpy="0 0 0" xyz="-0.008999 -0.035301 -0.023" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="base_link_sphere4" />
+  <joint name="base_link_joint_sphere4" type="fixed">
+    <parent link="base_link" />
+    <child link="base_link_sphere4" />
+    <origin rpy="0 0 0" xyz="-0.009 -0.000634 -0.022934" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="base_link_sphere5" />
+  <joint name="base_link_joint_sphere5" type="fixed">
+    <parent link="base_link" />
+    <child link="base_link_sphere5" />
+    <origin rpy="0 0 0" xyz="-0.023501 -0.023091 -0.08874" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="base_link_sphere6" />
+  <joint name="base_link_joint_sphere6" type="fixed">
+    <parent link="base_link" />
+    <child link="base_link_sphere6" />
+    <origin rpy="0 0 0" xyz="-0.021675 0.013491 -0.08874" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="base_link_sphere7" />
+  <joint name="base_link_joint_sphere7" type="fixed">
+    <parent link="base_link" />
+    <child link="base_link_sphere7" />
+    <origin rpy="0 0 0" xyz="-0.000279 0.016256 -0.08874" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="base_link_sphere8" />
+  <joint name="base_link_joint_sphere8" type="fixed">
+    <parent link="base_link" />
+    <child link="base_link_sphere8" />
+    <origin rpy="0 0 0" xyz="-8.7e-05 -0.01319 -0.08874" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="base_link_sphere9" />
+  <joint name="base_link_joint_sphere9" type="fixed">
+    <parent link="base_link" />
+    <child link="base_link_sphere9" />
+    <origin rpy="0 0 0" xyz="-0.0048 -0.035012 -0.08874" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link0_sphere1" />
+  <joint name="allegro_link0_joint_sphere1" type="fixed">
+    <parent link="allegro_link0" />
+    <child link="allegro_link0_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -0.00555 0.0082" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link0_sphere2" />
+  <joint name="allegro_link0_joint_sphere2" type="fixed">
+    <parent link="allegro_link0" />
+    <child link="allegro_link0_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.00555 0.0082" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link1_sphere1" />
+  <joint name="allegro_link1_joint_sphere1" type="fixed">
+    <parent link="allegro_link1" />
+    <child link="allegro_link1_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -1e-06 0.0442" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link1_sphere2" />
+  <joint name="allegro_link1_joint_sphere2" type="fixed">
+    <parent link="allegro_link1" />
+    <child link="allegro_link1_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 1e-06 0.009799" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link1_sphere3" />
+  <joint name="allegro_link1_joint_sphere3" type="fixed">
+    <parent link="allegro_link1" />
+    <child link="allegro_link1_sphere3" />
+    <origin rpy="0 0 0" xyz="-1e-06 0.000541 0.027809" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link2_sphere1" />
+  <joint name="allegro_link2_joint_sphere1" type="fixed">
+    <parent link="allegro_link2" />
+    <child link="allegro_link2_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 1e-06 0.009798" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link2_sphere2" />
+  <joint name="allegro_link2_joint_sphere2" type="fixed">
+    <parent link="allegro_link2" />
+    <child link="allegro_link2_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0286" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link3_sphere1" />
+  <joint name="allegro_link3_joint_sphere1" type="fixed">
+    <parent link="allegro_link3" />
+    <child link="allegro_link3_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -0.00365 0.0047" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link3_sphere2" />
+  <joint name="allegro_link3_joint_sphere2" type="fixed">
+    <parent link="allegro_link3" />
+    <child link="allegro_link3_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.003651 0.004701" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link3_tip_sphere1" />
+  <joint name="allegro_link3_tip_joint_sphere1" type="fixed">
+    <parent link="allegro_link3_tip" />
+    <child link="allegro_link3_tip_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.000499" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link4_sphere1" />
+  <joint name="allegro_link4_joint_sphere1" type="fixed">
+    <parent link="allegro_link4" />
+    <child link="allegro_link4_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -0.00555 0.0082" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link4_sphere2" />
+  <joint name="allegro_link4_joint_sphere2" type="fixed">
+    <parent link="allegro_link4" />
+    <child link="allegro_link4_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.00555 0.0082" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link5_sphere1" />
+  <joint name="allegro_link5_joint_sphere1" type="fixed">
+    <parent link="allegro_link5" />
+    <child link="allegro_link5_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -1e-06 0.0442" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link5_sphere2" />
+  <joint name="allegro_link5_joint_sphere2" type="fixed">
+    <parent link="allegro_link5" />
+    <child link="allegro_link5_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 1e-06 0.009799" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link5_sphere3" />
+  <joint name="allegro_link5_joint_sphere3" type="fixed">
+    <parent link="allegro_link5" />
+    <child link="allegro_link5_sphere3" />
+    <origin rpy="0 0 0" xyz="-1e-06 0.000541 0.027809" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link6_sphere1" />
+  <joint name="allegro_link6_joint_sphere1" type="fixed">
+    <parent link="allegro_link6" />
+    <child link="allegro_link6_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 1e-06 0.009798" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link6_sphere2" />
+  <joint name="allegro_link6_joint_sphere2" type="fixed">
+    <parent link="allegro_link6" />
+    <child link="allegro_link6_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0286" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link7_sphere1" />
+  <joint name="allegro_link7_joint_sphere1" type="fixed">
+    <parent link="allegro_link7" />
+    <child link="allegro_link7_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -0.00365 0.0047" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link7_sphere2" />
+  <joint name="allegro_link7_joint_sphere2" type="fixed">
+    <parent link="allegro_link7" />
+    <child link="allegro_link7_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.003651 0.004701" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link7_tip_sphere1" />
+  <joint name="allegro_link7_tip_joint_sphere1" type="fixed">
+    <parent link="allegro_link7_tip" />
+    <child link="allegro_link7_tip_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.000499" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link8_sphere1" />
+  <joint name="allegro_link8_joint_sphere1" type="fixed">
+    <parent link="allegro_link8" />
+    <child link="allegro_link8_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -0.00555 0.0082" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link8_sphere2" />
+  <joint name="allegro_link8_joint_sphere2" type="fixed">
+    <parent link="allegro_link8" />
+    <child link="allegro_link8_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.00555 0.0082" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link9_sphere1" />
+  <joint name="allegro_link9_joint_sphere1" type="fixed">
+    <parent link="allegro_link9" />
+    <child link="allegro_link9_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -1e-06 0.0442" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link9_sphere2" />
+  <joint name="allegro_link9_joint_sphere2" type="fixed">
+    <parent link="allegro_link9" />
+    <child link="allegro_link9_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 1e-06 0.009799" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link9_sphere3" />
+  <joint name="allegro_link9_joint_sphere3" type="fixed">
+    <parent link="allegro_link9" />
+    <child link="allegro_link9_sphere3" />
+    <origin rpy="0 0 0" xyz="-1e-06 0.000541 0.027809" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link10_sphere1" />
+  <joint name="allegro_link10_joint_sphere1" type="fixed">
+    <parent link="allegro_link10" />
+    <child link="allegro_link10_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 1e-06 0.009798" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link10_sphere2" />
+  <joint name="allegro_link10_joint_sphere2" type="fixed">
+    <parent link="allegro_link10" />
+    <child link="allegro_link10_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0286" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link11_sphere1" />
+  <joint name="allegro_link11_joint_sphere1" type="fixed">
+    <parent link="allegro_link11" />
+    <child link="allegro_link11_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -0.00365 0.0047" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link11_sphere2" />
+  <joint name="allegro_link11_joint_sphere2" type="fixed">
+    <parent link="allegro_link11" />
+    <child link="allegro_link11_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.003651 0.004701" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link11_tip_sphere1" />
+  <joint name="allegro_link11_tip_joint_sphere1" type="fixed">
+    <parent link="allegro_link11_tip" />
+    <child link="allegro_link11_tip_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.000499" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link12_sphere1" />
+  <joint name="allegro_link12_joint_sphere1" type="fixed">
+    <parent link="allegro_link12" />
+    <child link="allegro_link12_sphere1" />
+    <origin rpy="0 0 0" xyz="-0.0179 0.009001 0.02025" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link12_sphere2" />
+  <joint name="allegro_link12_joint_sphere2" type="fixed">
+    <parent link="allegro_link12" />
+    <child link="allegro_link12_sphere2" />
+    <origin rpy="0 0 0" xyz="-0.017901 0.009 0.008749" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link13_sphere1" />
+  <joint name="allegro_link13_joint_sphere1" type="fixed">
+    <parent link="allegro_link13" />
+    <child link="allegro_link13_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -0.004901 0.00885" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link13_sphere2" />
+  <joint name="allegro_link13_joint_sphere2" type="fixed">
+    <parent link="allegro_link13" />
+    <child link="allegro_link13_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 0.0049 0.00885" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link14_sphere1" />
+  <joint name="allegro_link14_joint_sphere1" type="fixed">
+    <parent link="allegro_link14" />
+    <child link="allegro_link14_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 -3.9e-05 0.010809" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link14_sphere2" />
+  <joint name="allegro_link14_joint_sphere2" type="fixed">
+    <parent link="allegro_link14" />
+    <child link="allegro_link14_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 -1e-06 0.0416" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link14_sphere3" />
+  <joint name="allegro_link14_joint_sphere3" type="fixed">
+    <parent link="allegro_link14" />
+    <child link="allegro_link14_sphere3" />
+    <origin rpy="0 0 0" xyz="0.0 0.000145 0.029669" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link15_sphere1" />
+  <joint name="allegro_link15_joint_sphere1" type="fixed">
+    <parent link="allegro_link15" />
+    <child link="allegro_link15_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.00111" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link15_sphere2" />
+  <joint name="allegro_link15_joint_sphere2" type="fixed">
+    <parent link="allegro_link15" />
+    <child link="allegro_link15_sphere2" />
+    <origin rpy="0 0 0" xyz="0.0 -1.5e-05 0.021412" />
+    <axis xyz="0 0 1" />
+    </joint>
+  <link name="allegro_link15_tip_sphere1" />
+  <joint name="allegro_link15_tip_joint_sphere1" type="fixed">
+    <parent link="allegro_link15_tip" />
+    <child link="allegro_link15_tip_sphere1" />
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.000499" />
+    <axis xyz="0 0 1" />
+    </joint>
+  </robot>

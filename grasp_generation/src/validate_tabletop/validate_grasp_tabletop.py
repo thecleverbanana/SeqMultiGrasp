@@ -59,7 +59,7 @@ def validate_one_object_tabletop(
     hand_qpos = hand_qpos.to(tensor_args.dtype).to(tensor_args.device)
 
     # initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, 0.0]) # for franka original
-    initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, 0.0]).to(
+    initial_agent_poses = ManiSkillPose.create_from_pq(p=[-0.5, 0, 0]).to(
         tensor_args.device
     )  # for xarm tuning
     z_top = 0.083
@@ -71,23 +71,52 @@ def validate_one_object_tabletop(
     object_mesh: trimesh.Trimesh = trimesh.load(
         get_object_mesh_path(object_name))
     object_z = -object_mesh.bounding_box.bounds[0, 2]
+    if os.getenv("TABLETOP_GRASP_STATS", "0") == "1":
+        bounds = object_mesh.bounding_box.bounds
+        extents = object_mesh.bounding_box.extents
+        print("object name:", object_name)
+        print("object bounds:", bounds.tolist())
+        print("object extents:", extents.tolist())
+        print("object z offset:", object_z)
 
     initial_object_pose = ManiSkillPose.create_from_pq(
         p=[object_xy[0], object_xy[1], object_z+z_top])
 
     object_pose_in_root_frame = (initial_agent_poses.inv()*initial_object_pose)
 
-    static_box_pose_in_root_frame = (initial_agent_poses.inv(
+    static_box_pose_in_root_frame_ms = (initial_agent_poses.inv(
     )*ManiSkillPose.create_from_pq(p=static_box_pos)).raw_pose.squeeze(
-        0).cpu().numpy()
+        0).cpu().numpy().tolist()
+    static_box_pose_in_root_frame = static_box_pose_in_root_frame_ms
+
+    table_pose_world = ManiSkillPose.create_from_pq(
+        p=[0.38, 0, -0.9196429 / 2],
+        q=transforms3d.euler.euler2quat(0, 0, np.pi / 2),
+    )
+    table_pose_in_root_frame_ms = (initial_agent_poses.inv() * table_pose_world).raw_pose.squeeze(
+        0).cpu().numpy().tolist()
+    table_pose_in_root_frame = table_pose_in_root_frame_ms
+
+    object_pose_in_root_frame_curobo = object_pose_in_root_frame.raw_pose.squeeze(
+        0).cpu().numpy().tolist()
 
     world_cfg_object = make_world_config_object(
         object_file_path=get_object_mesh_path(object_name),
-        object_pose=object_pose_in_root_frame.raw_pose.squeeze(
-            0).cpu().numpy().tolist(),
-        sponge_pose=static_box_pose_in_root_frame.tolist(),
+        object_pose=object_pose_in_root_frame_curobo,
+        table_pose=table_pose_in_root_frame,
+        sponge_pose=static_box_pose_in_root_frame,
         sponge_dims=static_box_dims.tolist(),
     )
+    if os.getenv("CUROBO_IK_COLLISION_DEBUG", "0") == "1":
+        table_top = table_pose_in_root_frame[2] + 0.9196429 / 2
+        print("World collision debug:")
+        print("  table dims:", [2.418, 1.209, 0.9196429])
+        print("  table pose:", table_pose_in_root_frame)
+        print("  table top z:", table_top)
+        print("  sponge dims:", static_box_dims.tolist())
+        print("  sponge pose:", static_box_pose_in_root_frame)
+        print("  object pose:", object_pose_in_root_frame_curobo)
+        print("  hand root pose:", initial_agent_poses.raw_pose.squeeze(0).cpu().numpy().tolist())
 
     ik_solver = initialize_ik_solver(world_cfg_object, tensor_args)
 
@@ -112,6 +141,8 @@ def validate_one_object_tabletop(
         object_name=object_name,
         object_xy=object_xy,
         hand_initial_joint_positions=_HAND_INITIAL_JOINT_POSITIONS,
+        table_pose_in_root_frame=table_pose_in_root_frame,
+        table_dims=[2.418, 1.209, 0.9196429],
         static_box_pose_in_root_frame=static_box_pose_in_root_frame,
         static_box_dims=static_box_dims,
         initial_agent_poses=initial_agent_poses,
@@ -133,14 +164,19 @@ def initialize_ik_solver(world_cfg: WorldConfig, tensor_args: TensorDeviceType) 
     robot_cfg_data = load_yaml(robot_cfg_path)
     robot_cfg = RobotConfig.from_dict(robot_cfg_data["robot_cfg"])
 
+    if os.getenv("CUROBO_IK_NO_WORLD", "0") == "1":
+        world_cfg = None
+
     ik_config = IKSolverConfig.load_from_robot_config(
         robot_cfg,
         world_cfg,
         rotation_threshold=0.05,
         position_threshold=0.005,
         num_seeds=20,
+        store_debug=True,
         self_collision_check=False,
         self_collision_opt=False,
+        collision_activation_distance=0.0,
         tensor_args=tensor_args,
         use_cuda_graph=True,
     )
@@ -150,6 +186,7 @@ def initialize_ik_solver(world_cfg: WorldConfig, tensor_args: TensorDeviceType) 
 def make_world_config_object(
     object_file_path: str,
     object_pose: List[float],
+    table_pose: List[float],
     sponge_pose: List[float],
     sponge_dims: List[float],
 ):
@@ -163,7 +200,7 @@ def make_world_config_object(
         "cuboid": {
             "table": {
                 "dims": [2.418,  1.209, 0.9196429],
-                "pose": [0.38, 0, -0.9196429/2]+transforms3d.euler.euler2quat(0, 0, np.pi / 2).tolist(),
+                "pose": table_pose,
             },
             'sponge': {
                 "dims": sponge_dims,
