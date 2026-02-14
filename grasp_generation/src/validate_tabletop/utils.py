@@ -46,6 +46,7 @@ def run_interpolated_trajectory(
     initial_joint_positions: torch.Tensor,
     action_reorder_idx: Optional[torch.Tensor] = None,
     debug_hook: Optional[Callable[[str], None]] = None,
+    on_step: Optional[Callable[[], None]] = None,
 
     steps_per_phase: int = 50,
     rotate_hand: bool = False,
@@ -95,6 +96,8 @@ def run_interpolated_trajectory(
             if action_reorder_idx is not None:
                 action = action[:, action_reorder_idx]
             env.step(action)
+            if on_step is not None:
+                on_step()
 
     step_env_with_interpolation(
         arm_start=qpos_hand_pre_grasp_pose,

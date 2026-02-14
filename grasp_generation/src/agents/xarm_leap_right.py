@@ -48,15 +48,14 @@ class XArm7LeapRight(BaseAgent):
         )
     )
 
-    # xArm7 joints (from your URDF: joint1..joint7)
     arm_joint_names = [
-        "joint1",
-        "joint2",
-        "joint3",
-        "joint4",
-        "joint5",
-        "joint6",
-        "joint7",
+        "xarm7_joint1",
+        "xarm7_joint2",
+        "xarm7_joint3",
+        "xarm7_joint4",
+        "xarm7_joint5",
+        "xarm7_joint6",
+        "xarm7_joint7",
     ]
 
     qmin_arm = torch.tensor(
@@ -100,32 +99,32 @@ class XArm7LeapRight(BaseAgent):
     )
 
     hand_joint_names = [
-        "joint_0",
-        "joint_1",
-        "joint_2",
-        "joint_3",
-        "joint_4",
-        "joint_5",
-        "joint_6",
-        "joint_7",
-        "joint_8",
-        "joint_9",
-        "joint_10",
-        "joint_11",
-        "joint_12",
-        "joint_13",
-        "joint_14",
-        "joint_15",
+        "leap_joint0",
+        "leap_joint1",
+        "leap_joint2",
+        "leap_joint3",
+        "leap_joint4",
+        "leap_joint5",
+        "leap_joint6",
+        "leap_joint7",
+        "leap_joint8",
+        "leap_joint9",
+        "leap_joint10",
+        "leap_joint11",
+        "leap_joint12",
+        "leap_joint13",
+        "leap_joint14",
+        "leap_joint15",
     ]
 
     _finger_contact_link_names = [
-        "thumb_fingertip", "thumb_dip", "thumb_pip",  # thumb
-        "fingertip", "dip", "pip", "mcp_joint",  # index
-        "fingertip_2", "dip_2", "pip_2", "mcp_joint_2",  # middle
-        "fingertip_3", "dip_3", "pip_3", "mcp_joint_3",  # ring
+        "thumb_fingertip", "thumb_dip", "thumb_pip", "pip_4",  # thumb
+        "fingertip_1", "dip_1", "pip_1", "mcp_joint_1",        # index
+        "fingertip_2", "dip_2", "pip_2", "mcp_joint_2",        # middle
+        "fingertip_3", "dip_3", "pip_3", "mcp_joint_3",        # ring
     ]
 
-    _palm_link_name = "palm_lower"
+    _palm_link_name = "palm_link"
 
     @property
     def _finger_contact_links(self) -> List[Link]:

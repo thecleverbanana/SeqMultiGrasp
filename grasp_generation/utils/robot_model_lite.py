@@ -45,7 +45,7 @@ class RobotModelURDFLite:
             urdf_xml = f.read()
 
         self.chain = pk.build_chain_from_urdf(
-            urdf_xml).to(dtype=torch.float, device=device)
+            urdf_xml.encode()).to(dtype=torch.float, device=device)
         self.n_dofs = len(self.chain.get_joint_parameter_names())
 
         # Build local mesh geometry for each link

@@ -1,6 +1,6 @@
 from src.envs.utils.actor_utils import build_static_box_with_collision
 
-from src.agents import XArm7AllegoRight
+from src.agents import XArm7AllegoRight, XArm7LeapRight
 
 from typing import Any, Dict, List, Optional, Union, Callable
 
@@ -18,10 +18,10 @@ from sapien.physx import PhysxMaterial
 
 
 class TwoObjectsBase(BaseEnv):
-    SUPPORTED_ROBOTS = [XArm7AllegoRight.uid]
+    SUPPORTED_ROBOTS = [XArm7AllegoRight.uid, XArm7LeapRight.uid]
     SUPPORTED_REWARD_MODES = ["none"]
 
-    agent: Union[XArm7AllegoRight]
+    agent: Union[XArm7AllegoRight, XArm7LeapRight]
 
     table_static_friction = 0.5
     table_dynamic_friction = 0.5
@@ -192,10 +192,10 @@ class TwoObjectsBase(BaseEnv):
 
 
 class OneObjectBase(BaseEnv):
-    SUPPORTED_ROBOTS = [XArm7AllegoRight.uid]
+    SUPPORTED_ROBOTS = [XArm7AllegoRight.uid, XArm7LeapRight.uid]
     SUPPORTED_REWARD_MODES = ["none"]
 
-    agent: Union[XArm7AllegoRight]
+    agent: Union[XArm7AllegoRight, XArm7LeapRight]
 
     table_static_friction = 0.5
     table_dynamic_friction = 0.5
